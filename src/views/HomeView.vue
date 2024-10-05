@@ -32,7 +32,6 @@ export default {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         state.pokemons = data.results;
         state.urlIdLookup = data.results.reduce((acc, cur, idx) =>
           acc = { ...acc, [cur.name]: idx + 1 }
